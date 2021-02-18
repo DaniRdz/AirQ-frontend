@@ -1,8 +1,39 @@
 .navigation-container {
   display: grid;
-  grid-template-rows: 1fr fr;
+  grid-template-rows: 1fr 1fr;
   .navigation-bar {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    background-color: $primary-blue;
+
+    .logo {
+      padding: 10px 0px 10px 30px;
+    }
+
+    .search-bar {
+      align-self: center;
+
+      input {
+        width: 50%;
+        height: 40px;
+        border-radius: 30px;
+        border: 1px solid transparent;
+        background-color: $secondary-blue;
+        color: $soft-white-blue;
+        font-family: "oxygen";
+        font-size: 1.2rem;
+        text-align: center;
+
+        &:focus {
+          outline: none;
+          border: 1px solid $soft-white-blue;
+        }
+
+        &::placeholder {
+          color: $soft-white-blue;
+          text-align: center;
+        }
+      }
+    }
   }
 }
