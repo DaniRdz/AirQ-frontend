@@ -1,9 +1,10 @@
 body {
   margin: 0px;
-  font-family: "montserrat";
+  font-family: "roboto";
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr;
+  background-color: $soft-white;
 }
