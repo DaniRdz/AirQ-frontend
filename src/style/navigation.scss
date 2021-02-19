@@ -1,9 +1,9 @@
 .navigation-container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
   .navigation-bar {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr;
     background-color: $primary-blue;
 
     .logo {
@@ -14,7 +14,7 @@
       align-self: center;
 
       input {
-        width: 50%;
+        width: 100%;
         height: 40px;
         border-radius: 30px;
         border: 1px solid transparent;
@@ -35,5 +35,8 @@
         }
       }
     }
+  }
+  .recent-search-container {
+    background-color: $secondary-blue;
   }
 }
