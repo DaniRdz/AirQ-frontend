@@ -1,5 +1,5 @@
 .home-container {
-  height: 100vh;
+  height: calc(100vh - 141px);
 
   display: grid;
   grid-template-columns: 1fr 1fr;
