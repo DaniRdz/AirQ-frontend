@@ -6,6 +6,8 @@ export default class Weather extends Component {
   }
   render() {
     const { city, state, country, current } = this.props.cityWeather;
+    const { weather } = current;
+    const { tp, hu, pr, ws, wd, ts, ic } = weather;
 
     return (
       <div className="weather-container">
@@ -13,8 +15,14 @@ export default class Weather extends Component {
           <div>Weather Today In:</div>
           <div>{`${city}, ${state}, ${country}`}</div>
           <div>
-            <div>{`°`}</div>
+            <div>{`${tp}°`}</div>
             <div>image goes here</div>
+          </div>
+          <div>
+            <div>{`Humidity: ${hu}%`}</div>
+            <div>{`Wind: ${ws}m/s`}</div>
+            <div>{`Pressure: ${pr}mb`}</div>
+            <div>{`Wind Direction: ${wd}°`}</div>
           </div>
         </div>
       </div>

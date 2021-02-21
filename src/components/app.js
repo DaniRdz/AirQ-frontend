@@ -11,7 +11,15 @@ export default class App extends Component {
     this.state = {
       latitude: "",
       longitude: "",
-      cityData: {},
+      cityData: {
+        city: "",
+        state: "",
+        country: "",
+        current: {
+          weather: { tp: "", hu: "", pr: "", ws: "", wd: "", ts: "", ic: "" },
+          pollution: {},
+        },
+      },
     };
   }
   getCityData() {
