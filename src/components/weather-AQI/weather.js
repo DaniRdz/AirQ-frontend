@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from "moment";
 
 export default class Weather extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class Weather extends Component {
         <div className="weather-info">
           <div>Weather Today In:</div>
           <div>{`${city}, ${state}, ${country}`}</div>
+          <div>{moment(ts).format("MMMM Do YYYY, h:mm:ss a")}</div>
           <div>
             <div>{`${tp}°`}</div>
             <div>image goes here</div>
