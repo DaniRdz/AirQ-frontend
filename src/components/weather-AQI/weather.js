@@ -13,18 +13,24 @@ export default class Weather extends Component {
     return (
       <div className="weather-container">
         <div className="weather-info">
-          <div>Weather Today In:</div>
-          <div>{`${city}, ${state}, ${country}`}</div>
-          <div>{moment(ts).format("MMMM Do YYYY, h:mm:ss a")}</div>
-          <div>
-            <div>{`${tp}°`}</div>
-            <div>image goes here</div>
-          </div>
-          <div>
-            <div>{`Humidity: ${hu}%`}</div>
-            <div>{`Wind: ${ws}m/s`}</div>
-            <div>{`Pressure: ${pr}mb`}</div>
-            <div>{`Wind Direction: ${wd}°`}</div>
+          <div className="weather-info-container">
+            <div className="title">
+              <div className="subtitle">Weather Today In:</div>
+              <div className="current-city">{`${city}, ${state}, ${country}`}</div>
+              <div className="hours">
+                {moment(ts).format("MMMM Do YYYY, h:mm:ss a")}
+              </div>
+            </div>
+            <div className="weather-state-grades">
+              <div>{`${tp}°`}</div>
+              <div>image goes here</div>
+            </div>
+            <div className="weather-state-info">
+              <div>{`Humidity: ${hu}%`}</div>
+              <div>{`Wind: ${ws}m/s`}</div>
+              <div>{`Pressure: ${pr}mb`}</div>
+              <div>{`Wind Direction: ${wd}°`}</div>
+            </div>
           </div>
         </div>
       </div>
