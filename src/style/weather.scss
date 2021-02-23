@@ -1,13 +1,48 @@
 .weather-info {
   height: 80%;
   border: solid 1px $secondary-blue;
-  border-radius: 30px;
+  background-color: #ffff;
+
+  border-radius: 10px;
+  box-shadow: 0px 12px 5px 0px rgba(0, 0, 0, 0.2);
 
   .weather-info-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    padding: 30px;
 
-    padding: 20px;
+    .title {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      row-gap: 10px;
+      font-family: "oxygen";
+      .subtitle {
+        color: $secondary-blue;
+        font-size: 2rem;
+      }
+      .current-city {
+        font-size: 1.5rem;
+      }
+      .time {
+        font-family: "roboto";
+        color: #cbcbcb;
+        font-size: 1.25rem;
+      }
+    }
+
+    .weather-state-grades {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .grades {
+        font-family: "oxygen";
+        font-size: 5rem;
+      }
+      img {
+        width: 40%;
+      }
+    }
   }
 }

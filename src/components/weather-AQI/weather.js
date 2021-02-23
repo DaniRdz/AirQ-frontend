@@ -17,13 +17,13 @@ export default class Weather extends Component {
             <div className="title">
               <div className="subtitle">Weather Today In:</div>
               <div className="current-city">{`${city}, ${state}, ${country}`}</div>
-              <div className="hours">
-                {moment(ts).format("MMMM Do YYYY, h:mm:ss a")}
+              <div className="time">
+                {` As of ${moment(ts).format("h:mm:ss a")}`}
               </div>
             </div>
             <div className="weather-state-grades">
-              <div>{`${tp}°`}</div>
-              <div>image goes here</div>
+              <div className="grades">{`${tp}°`}</div>
+              <img src={`https://airvisual.com/images/${ic}.png`} />
             </div>
             <div className="weather-state-info">
               <div>{`Humidity: ${hu}%`}</div>
