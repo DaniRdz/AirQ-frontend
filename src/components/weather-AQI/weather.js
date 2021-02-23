@@ -18,7 +18,7 @@ export default class Weather extends Component {
               <div className="subtitle">Weather Today In:</div>
               <div className="current-city">{`${city}, ${state}, ${country}`}</div>
               <div className="time">
-                {` As of ${moment(ts).format("h:mm:ss a")}`}
+                {` As of ${moment(ts).format("h:mm a")}`}
               </div>
             </div>
             <div className="weather-state-grades">
