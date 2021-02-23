@@ -16,7 +16,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-      row-gap: 10px;
+
       font-family: "oxygen";
       .subtitle {
         color: $secondary-blue;
@@ -28,7 +28,7 @@
       .time {
         font-family: "roboto";
         color: #cbcbcb;
-        font-size: 1.25rem;
+        font-size: 1.3rem;
       }
     }
 
@@ -42,6 +42,21 @@
       }
       img {
         width: 40%;
+      }
+    }
+    .weather-state-wrapper {
+      grid-column: 1/-1;
+
+      border: solid 1px $secondary-blue;
+      border-radius: 10px;
+      padding: 20px;
+
+      .weather-state-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 15px;
+
+        font-size: 1.25rem;
       }
     }
   }

@@ -25,11 +25,13 @@ export default class Weather extends Component {
               <div className="grades">{`${tp}°`}</div>
               <img src={`https://airvisual.com/images/${ic}.png`} />
             </div>
-            <div className="weather-state-info">
-              <div>{`Humidity: ${hu}%`}</div>
-              <div>{`Wind: ${ws}m/s`}</div>
-              <div>{`Pressure: ${pr}mb`}</div>
-              <div>{`Wind Direction: ${wd}°`}</div>
+            <div className="weather-state-wrapper">
+              <div className="weather-state-info">
+                <div className="humidity">{`Humidity: ${hu}%`}</div>
+                <div className="wind-speed">{`Wind: ${ws} m/s`}</div>
+                <div className="pressure">{`Pressure: ${pr} mb`}</div>
+                <div className="wind-direction">{`Wind Direction: ${wd}°`}</div>
+              </div>
             </div>
           </div>
         </div>
