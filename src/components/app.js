@@ -17,7 +17,7 @@ export default class App extends Component {
         country: "",
         current: {
           weather: { tp: "", hu: "", pr: "", ws: "", wd: "", ts: "", ic: "" },
-          pollution: {},
+          pollution: { aqicn: "", aqius: "" },
         },
       },
     };
