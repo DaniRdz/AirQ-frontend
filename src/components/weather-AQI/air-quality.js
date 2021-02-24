@@ -29,6 +29,31 @@ export default class AirQuality extends Component {
       }
     }
   }
+
+  airQualityIndexClass(aqi) {
+    if (typeof aqi === "number") {
+      let status = "";
+      if (aqi < 50) {
+        status = "good";
+        return status;
+      } else if (aqi > 50 && aqi < 100) {
+        status = "moderate";
+        return status;
+      } else if (aqi > 100 && aqi < 150) {
+        status = "unhealthy-for-sensitive-groups";
+        return status;
+      } else if (aqi > 150 && aqi < 200) {
+        status = "unhealthy";
+        return status;
+      } else if (aqi > 200 && aqi < 300) {
+        status = "very-unhealthy";
+        return status;
+      } else if (aqi > 300 && aqi < 500) {
+        status = "hazardous";
+        return status;
+      }
+    }
+  }
   render() {
     const { city, state, country, current } = this.props.cityAQI;
     const { pollution } = current;
@@ -36,7 +61,11 @@ export default class AirQuality extends Component {
 
     return (
       <div className="air-quality-wrapper">
-        <div className="air-quality-container">
+        <div
+          className={`air-quality-container ${this.airQualityIndexClass(
+            aqius
+          )}`}
+        >
           <div className="air-quality-info-wrapper">
             <div className="title">
               <div className="subtitle"> Air Quality Index In:</div>

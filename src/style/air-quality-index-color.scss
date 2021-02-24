@@ -1,0 +1,65 @@
+.good {
+  border: solid 1px #607631;
+  background-color: #a8e05f;
+  .air-quality-info-wrapper {
+    color: #607631;
+  }
+  .circle {
+    background-color: #87c13c;
+  }
+}
+
+.moderate {
+  border: solid 1px #8c6c1d;
+  background-color: #fdd64b;
+  .air-quality-info-wrapper {
+    color: #8c6c1d;
+  }
+  .circle {
+    background-color: #efbe1d;
+  }
+}
+
+.unhealthy-for-sensitive-groups {
+  border: solid 1px #974a20;
+  background-color: #ff9b57;
+  .air-quality-info-wrapper {
+    color: #974a20;
+  }
+  .circle {
+    background-color: #f27e2f;
+  }
+}
+
+.unhealthy {
+  border: solid 1px #942431;
+  background-color: #fe6a69;
+  .air-quality-info-wrapper {
+    color: #942431;
+  }
+  .circle {
+    background-color: #e84b50;
+  }
+}
+
+.very-unhealthy {
+  border: solid 1px #543b63;
+  background-color: #a97abc;
+  .air-quality-info-wrapper {
+    color: #543b63;
+  }
+  .circle {
+    background-color: #8a5d9d;
+  }
+}
+
+.hazardous {
+  border: solid 1px #573344;
+  background-color: #a87383;
+  .air-quality-info-wrapper {
+    color: #573344;
+  }
+  .circle {
+    background-color: #915c6c;
+  }
+}
