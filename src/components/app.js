@@ -20,6 +20,7 @@ export default class App extends Component {
           pollution: { aqicn: "", aqius: "" },
         },
       },
+      recentCities: [],
     };
   }
   getCityData() {
@@ -30,6 +31,7 @@ export default class App extends Component {
       .then((response) => {
         this.setState({
           cityData: response.data.data,
+          recentCities: this.state.recentCities.concat(response.data.data),
         });
       })
       .catch((error) => {
@@ -53,7 +55,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <Navigation />
+        <Navigation recentCities={this.state.recentCities} />
         <Home cityData={this.state.cityData} />
       </div>
     );

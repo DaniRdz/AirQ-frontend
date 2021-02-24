@@ -3,6 +3,22 @@ import React, { Component } from "react";
 import logo from "../../static/assets/images/logo_AQI.jpg";
 
 export default class Navigation extends Component {
+  constructor(props) {
+    super(props);
+  }
+  recentSearchCities() {
+    return this.props.recentCities.map((recentCity, idx) => {
+      const { city, state, country, current } = recentCity;
+      const { weather } = current;
+      const { tp, ic } = weather;
+      return (
+        <div
+          key={idx}
+          className="miniature-city-container"
+        >{`${city}, ${state}, ${country} ${tp}°`}</div>
+      );
+    });
+  }
   render() {
     return (
       <div className="navigation-container">
@@ -21,7 +37,9 @@ export default class Navigation extends Component {
             />
           </div>
         </div>
-        <div className="recent-search-container">list of recent cities</div>
+        <div className="recent-search-container">
+          {this.recentSearchCities()}
+        </div>
       </div>
     );
   }
