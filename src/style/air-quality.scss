@@ -8,7 +8,6 @@
   .air-quality-info-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
     padding: 30px;
 
     .title {
@@ -26,8 +25,8 @@
     .air-quality-info {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 2fr 1fr;
-      row-gap: 20px;
+      row-gap: 10px;
+      padding-top: 10px;
 
       .circles {
         display: flex;
@@ -36,8 +35,8 @@
 
         .circle {
           display: grid;
-          width: 120px;
-          height: 120px;
+          width: 130px;
+          height: 130px;
           border-radius: 50%;
           font-size: 4rem;
           .aqi {
@@ -48,10 +47,10 @@
         }
       }
       .air-quality-message {
-        align-self: center;
         justify-self: center;
         font-size: 3rem;
         font-family: "oxygen";
+        text-align: center;
       }
     }
   }
