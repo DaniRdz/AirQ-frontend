@@ -12,10 +12,14 @@ export default class Navigation extends Component {
       const { weather } = current;
       const { tp, ic } = weather;
       return (
-        <div
-          key={idx}
-          className="miniature-city-container"
-        >{`${city}, ${state}, ${country} ${tp}°`}</div>
+        <div key={idx} className="miniature-city-container">
+          <img
+            src={`https://airvisual.com/images/${ic}.png`}
+            style={{ width: "10%" }}
+          />
+          <div className="city-info">{`${tp}° ${city}, ${state}, ${country} `}</div>
+          <div className="delte-btn">delete</div>
+        </div>
       );
     });
   }

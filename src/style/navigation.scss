@@ -40,6 +40,17 @@
     }
   }
   .recent-search-container {
+    display: flex;
     background-color: $secondary-blue;
+
+    .miniature-city-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 360px;
+
+      border: 1px solid $primary-blue;
+      color: $soft-white-blue;
+    }
   }
 }
