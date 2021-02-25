@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import logo from "../../static/assets/images/logo_AQI.jpg";
+import SearchBar from "./search-bar";
+
+import logo from "../../../static/assets/images/logo_AQI.jpg";
 
 export default class Navigation extends Component {
   constructor(props) {
@@ -33,13 +35,7 @@ export default class Navigation extends Component {
               style={{ borderRadius: "50%", width: "70px", height: "70px" }}
             />
           </div>
-          <div className="search-bar">
-            <input
-              type="text"
-              name="city"
-              placeholder="Search City or Zip Code"
-            />
-          </div>
+          <SearchBar />
         </div>
         <div className="recent-search-container">
           {this.recentSearchCities()}

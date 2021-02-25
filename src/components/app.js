@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import Navigation from "./navigation";
+import Navigation from "./navigation/navigation";
 import Home from "./home";
 
 export default class App extends Component {
