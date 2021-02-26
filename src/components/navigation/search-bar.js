@@ -6,30 +6,34 @@ export default class SearchBar extends Component {
     super(props);
 
     this.state = {
-      city: "",
+      results: [],
     };
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
+  renderAutoComplete() {
+    return this.state.results.map((result) => {
+      return <div>{result.label}</div>;
+    });
+  }
+
   handleChange(event) {
-    this.setState({
-      city: event.target.value,
+    const provider = new OpenStreetMapProvider();
+
+    provider.search({ query: event.target.value }).then((results) => {
+      console.log(results);
+      this.setState({
+        results,
+      });
     });
   }
 
   handleFormSubmit(event) {
-    const provider = new OpenStreetMapProvider();
-
-    provider.search({ query: this.state.city }).then((result) => {
-      console.log(result);
-      this.setState({
-        city: "",
-      });
-    });
     event.preventDefault();
   }
+
   render() {
     return (
       <form onSubmit={this.handleFormSubmit} className="search-bar">
@@ -40,6 +44,7 @@ export default class SearchBar extends Component {
           value={this.state.city}
           onChange={this.handleChange}
         />
+        {this.renderAutoComplete()}
       </form>
     );
   }
