@@ -6,24 +6,43 @@ export default class SearchBar extends Component {
     super(props);
 
     this.state = {
+      city: "",
       results: [],
     };
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
+  }
+
+  handleOnClick(city) {
+    this.setState({
+      city: city.label,
+    });
   }
 
   renderAutoComplete() {
-    return this.state.results.map((result) => {
-      return <div>{result.label}</div>;
+    return this.state.results.map((result, idx) => {
+      return (
+        <div
+          onClick={() => {
+            this.handleOnClick(result);
+          }}
+          key={idx}
+        >
+          {result.label}
+        </div>
+      );
     });
   }
 
   handleChange(event) {
+    this.setState({
+      city: event.target.value,
+    });
     const provider = new OpenStreetMapProvider();
 
-    provider.search({ query: event.target.value }).then((results) => {
-      console.log(results);
+    provider.search({ query: this.state.city }).then((results) => {
       this.setState({
         results,
       });
@@ -31,6 +50,17 @@ export default class SearchBar extends Component {
   }
 
   handleFormSubmit(event) {
+    console.log(this.state.city);
+
+    const provider = new OpenStreetMapProvider();
+
+    provider.search({ query: "" }).then((results) => {
+      this.setState({
+        results,
+        city: "",
+      });
+    });
+
     event.preventDefault();
   }
 
