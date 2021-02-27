@@ -22,11 +22,17 @@ export default class App extends Component {
       },
       recentCities: [],
     };
+    this.getNewPosition = this.getNewPosition.bind(this);
   }
-  getCityData() {
+  getNewPosition(position) {
+    const { x, y } = position;
+
+    this.getCityData(y, x);
+  }
+  getCityData(lat, long) {
     axios
       .get(
-        `http://api.airvisual.com/v2/nearest_city?lat=${this.state.latitude}&lon=${this.state.longitude}&key=9ba4fdda-f64c-41d4-a73e-588304adae14`
+        `http://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=9ba4fdda-f64c-41d4-a73e-588304adae14`
       )
       .then((response) => {
         this.setState({
@@ -50,12 +56,15 @@ export default class App extends Component {
   }
   componentDidMount() {
     this.getCurrentPosition();
-    this.getCityData();
+    this.getCityData(this.state.latitude, this.state.longitude);
   }
   render() {
     return (
       <div className="container">
-        <Navigation recentCities={this.state.recentCities} />
+        <Navigation
+          recentCities={this.state.recentCities}
+          getNewPosition={this.getNewPosition}
+        />
         <Home cityData={this.state.cityData} />
       </div>
     );

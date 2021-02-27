@@ -7,6 +7,11 @@ import logo from "../../../static/assets/images/logo_AQI.jpg";
 export default class Navigation extends Component {
   constructor(props) {
     super(props);
+
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  onSubmit(city) {
+    this.props.getNewPosition(city);
   }
   recentSearchCities() {
     return this.props.recentCities.map((recentCity, idx) => {
@@ -35,7 +40,7 @@ export default class Navigation extends Component {
               style={{ borderRadius: "50%", width: "70px", height: "70px" }}
             />
           </div>
-          <SearchBar />
+          <SearchBar onSubmit={this.onSubmit} />
         </div>
         <div className="recent-search-container">
           {this.recentSearchCities()}

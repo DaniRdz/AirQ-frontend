@@ -7,6 +7,7 @@ export default class SearchBar extends Component {
 
     this.state = {
       city: "",
+      newCity: {},
       results: [],
     };
 
@@ -18,6 +19,7 @@ export default class SearchBar extends Component {
   handleOnClick(city) {
     this.setState({
       city: city.label,
+      newCity: city,
     });
   }
 
@@ -50,15 +52,11 @@ export default class SearchBar extends Component {
   }
 
   handleFormSubmit(event) {
-    console.log(this.state.city);
+    this.props.onSubmit(this.state.newCity);
 
-    const provider = new OpenStreetMapProvider();
-
-    provider.search({ query: "" }).then((results) => {
-      this.setState({
-        results,
-        city: "",
-      });
+    this.setState({
+      city: "",
+      results: [],
     });
 
     event.preventDefault();
