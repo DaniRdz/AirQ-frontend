@@ -49,7 +49,7 @@ export default class App extends Component {
   handleDeleteCity(deletedCity) {
     this.setState({
       recentCities: this.state.recentCities.filter((city) => {
-        return city.city !== deletedCity.city;
+        return city.location.coordinates !== deletedCity.location.coordinates;
       }),
     });
   }
