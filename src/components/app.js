@@ -24,6 +24,15 @@ export default class App extends Component {
     };
     this.getNewPosition = this.getNewPosition.bind(this);
     this.getNewCityData = this.getNewCityData.bind(this);
+    this.handleDeleteCity = this.handleDeleteCity.bind(this);
+  }
+  handleDeleteCity(deletedCity) {
+    this.setState({
+      recentCities: this.state.recentCities.filter((city) => {
+        return city.city !== deletedCity.city;
+      }),
+    });
+    console.log("deleted", city);
   }
   getNewCityData(city) {
     this.setState({
@@ -71,6 +80,7 @@ export default class App extends Component {
           recentCities={this.state.recentCities}
           getNewPosition={this.getNewPosition}
           getNewCityData={this.getNewCityData}
+          handleDeleteCity={this.handleDeleteCity}
         />
         <Home cityData={this.state.cityData} />
       </div>

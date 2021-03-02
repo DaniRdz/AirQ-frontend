@@ -51,8 +51,10 @@
 
       border: 1px solid $primary-blue;
       color: $soft-white-blue;
-
-      cursor: pointer;
+      .city-info,
+      .delte-btn {
+        cursor: pointer;
+      }
     }
   }
 }

@@ -10,6 +10,12 @@ export default class Navigation extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.selectRecentSearchCity = this.selectRecentSearchCity.bind(this);
+    this.handleClickDeleteRecentCity = this.handleClickDeleteRecentCity.bind(
+      this
+    );
+  }
+  handleClickDeleteRecentCity(city) {
+    this.props.handleDeleteCity(city);
   }
   onSubmit(city) {
     this.props.getNewPosition(city);
@@ -23,17 +29,21 @@ export default class Navigation extends Component {
       const { weather } = current;
       const { tp, ic } = weather;
       return (
-        <div
-          key={idx}
-          className="miniature-city-container"
-          onClick={() => this.selectRecentSearchCity(recentCity)}
-        >
+        <div key={idx} className="miniature-city-container">
           <img
             src={`https://airvisual.com/images/${ic}.png`}
             style={{ width: "10%" }}
           />
-          <div className="city-info">{`${tp}° ${city}, ${state}, ${country} `}</div>
-          <div className="delte-btn">delete</div>
+          <div
+            className="city-info"
+            onClick={() => this.selectRecentSearchCity(recentCity)}
+          >{`${tp}° ${city}, ${state}, ${country} `}</div>
+          <div
+            className="delte-btn"
+            onClick={() => this.handleClickDeleteRecentCity(recentCity)}
+          >
+            delete
+          </div>
         </div>
       );
     });
