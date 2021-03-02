@@ -32,7 +32,6 @@ export default class App extends Component {
         return city.city !== deletedCity.city;
       }),
     });
-    console.log("deleted", city);
   }
   getNewCityData(city) {
     this.setState({
