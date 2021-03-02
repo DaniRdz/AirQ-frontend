@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Weather extends Component {
   constructor(props) {
@@ -27,10 +28,22 @@ export default class Weather extends Component {
             </div>
             <div className="weather-state-wrapper">
               <div className="weather-state-info">
-                <div className="humidity">{`Humidity: ${hu}%`}</div>
-                <div className="wind-speed">{`Wind: ${ws} m/s`}</div>
-                <div className="pressure">{`Pressure: ${pr} mb`}</div>
-                <div className="wind-direction">{`Wind Direction: ${wd}°`}</div>
+                <div className="humidity">
+                  <FontAwesomeIcon icon="tint" />
+                  {` Humidity: ${hu}%`}
+                </div>
+                <div className="wind-speed">
+                  <FontAwesomeIcon icon="wind" />
+                  {` Wind: ${ws} m/s`}
+                </div>
+                <div className="pressure">
+                  <FontAwesomeIcon icon="arrow-down" />
+                  {` Pressure: ${pr} mb`}
+                </div>
+                <div className="wind-direction">
+                  <FontAwesomeIcon icon="location-arrow" />
+                  {` Wind Direction: ${wd}°`}
+                </div>
               </div>
             </div>
           </div>

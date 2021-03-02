@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import SearchBar from "./search-bar";
 
@@ -42,7 +43,7 @@ export default class Navigation extends Component {
             className="delte-btn"
             onClick={() => this.handleClickDeleteRecentCity(recentCity)}
           >
-            delete
+            <FontAwesomeIcon icon="trash" />
           </div>
         </div>
       );
