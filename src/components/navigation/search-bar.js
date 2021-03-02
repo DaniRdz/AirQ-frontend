@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { OpenStreetMapProvider } from "leaflet-geosearch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class SearchBar extends Component {
     this.setState({
       city: city.label,
       newCity: city,
+      results: [],
     });
   }
 
@@ -33,7 +35,10 @@ export default class SearchBar extends Component {
             this.handleOnClick(result);
           }}
         >
-          {result.label}
+          <div className="city-name-label">{result.label}</div>
+          <div className="icon">
+            <FontAwesomeIcon icon="chevron-up" />
+          </div>
         </div>
       );
     });
