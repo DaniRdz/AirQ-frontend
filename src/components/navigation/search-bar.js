@@ -27,10 +27,11 @@ export default class SearchBar extends Component {
     return this.state.results.map((result, idx) => {
       return (
         <div
+          className="result-container"
+          key={idx}
           onClick={() => {
             this.handleOnClick(result);
           }}
-          key={idx}
         >
           {result.label}
         </div>
@@ -69,10 +70,13 @@ export default class SearchBar extends Component {
           type="text"
           name="city"
           placeholder="Search City or Zip Code"
+          autoComplete="off"
           value={this.state.city}
           onChange={this.handleChange}
         />
-        {this.renderAutoComplete()}
+        <div className="results-wrapper">
+          <div className="results-container">{this.renderAutoComplete()}</div>
+        </div>
       </form>
     );
   }

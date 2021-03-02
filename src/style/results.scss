@@ -1,0 +1,31 @@
+.results-wrapper {
+  position: fixed;
+  padding: 0px 15px 0px 15px;
+
+  .results-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    position: absolute;
+
+    width: 700px;
+    padding: 0px 20px 0px 20px;
+
+    background-color: $soft-white-blue;
+    border-radius: 0px 0px 10px 10px;
+
+    .result-container {
+      font-size: 1.1rem;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      border-bottom: solid 1px transparent;
+
+      cursor: pointer;
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+        border-bottom: solid 1px $primary-blue;
+      }
+    }
+  }
+}
