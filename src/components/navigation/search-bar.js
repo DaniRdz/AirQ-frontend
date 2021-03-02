@@ -70,15 +70,20 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleFormSubmit} className="search-bar">
-        <input
-          type="text"
-          name="city"
-          placeholder="Search City or Zip Code"
-          autoComplete="off"
-          value={this.state.city}
-          onChange={this.handleChange}
-        />
+      <form onSubmit={this.handleFormSubmit} className="search-bar-wrapper">
+        <div className="search-bar">
+          <input
+            type="text"
+            name="city"
+            placeholder="Search City or Zip Code"
+            autoComplete="off"
+            value={this.state.city}
+            onChange={this.handleChange}
+          />
+          <div className="search-bar-icon" onClick={this.handleFormSubmit}>
+            <FontAwesomeIcon icon="search" />
+          </div>
+        </div>
         <div className="results-wrapper">
           <div className="results-container">{this.renderAutoComplete()}</div>
         </div>
