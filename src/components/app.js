@@ -23,6 +23,12 @@ export default class App extends Component {
       recentCities: [],
     };
     this.getNewPosition = this.getNewPosition.bind(this);
+    this.getNewCityData = this.getNewCityData.bind(this);
+  }
+  getNewCityData(city) {
+    this.setState({
+      cityData: city,
+    });
   }
   getNewPosition(position) {
     const { x, y } = position;
@@ -64,6 +70,7 @@ export default class App extends Component {
         <Navigation
           recentCities={this.state.recentCities}
           getNewPosition={this.getNewPosition}
+          getNewCityData={this.getNewCityData}
         />
         <Home cityData={this.state.cityData} />
       </div>

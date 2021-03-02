@@ -9,9 +9,13 @@ export default class Navigation extends Component {
     super(props);
 
     this.onSubmit = this.onSubmit.bind(this);
+    this.selectRecentSearchCity = this.selectRecentSearchCity.bind(this);
   }
   onSubmit(city) {
     this.props.getNewPosition(city);
+  }
+  selectRecentSearchCity(city) {
+    this.props.getNewCityData(city);
   }
   recentSearchCities() {
     return this.props.recentCities.map((recentCity, idx) => {
@@ -19,7 +23,11 @@ export default class Navigation extends Component {
       const { weather } = current;
       const { tp, ic } = weather;
       return (
-        <div key={idx} className="miniature-city-container">
+        <div
+          key={idx}
+          className="miniature-city-container"
+          onClick={() => this.selectRecentSearchCity(recentCity)}
+        >
           <img
             src={`https://airvisual.com/images/${ic}.png`}
             style={{ width: "10%" }}
