@@ -59,21 +59,39 @@
       }
     }
   }
-  .recent-search-container {
+  .recent-search-wrapper {
     display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    overflow: hidden;
     background-color: $secondary-blue;
 
-    .miniature-city-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      width: 360px;
+    .carousel-btn {
+      z-index: 9;
+    }
 
-      border: 1px solid $primary-blue;
-      color: $soft-white-blue;
-      .city-info,
-      .delte-btn {
-        cursor: pointer;
+    .recent-search-container {
+      position: absolute;
+      display: flex;
+
+      height: 100%;
+      padding: 0px 40px 0px 40px;
+
+      transform: translateX(0px);
+
+      .miniature-city-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 360px;
+
+        border: 1px solid $primary-blue;
+        color: $soft-white-blue;
+        .city-info,
+        .delte-btn {
+          cursor: pointer;
+        }
       }
     }
   }

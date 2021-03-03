@@ -54,7 +54,7 @@ export default class App extends Component {
       .then((response) => {
         this.setState({
           cityData: response.data.data,
-          recentCities: this.state.recentCities.concat(response.data.data),
+          recentCities: [response.data.data].concat(this.state.recentCities),
         });
       })
       .catch((error) => {

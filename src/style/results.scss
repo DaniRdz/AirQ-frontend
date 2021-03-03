@@ -1,6 +1,7 @@
 .results-wrapper {
   position: fixed;
   padding: 0px 15px 0px 15px;
+  z-index: 9;
 
   .results-container {
     display: grid;

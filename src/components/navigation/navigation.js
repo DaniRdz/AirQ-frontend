@@ -14,6 +14,14 @@ export default class Navigation extends Component {
     this.handleClickDeleteRecentCity = this.handleClickDeleteRecentCity.bind(
       this
     );
+    this.handleLeftCarouselClick = this.handleLeftCarouselClick.bind(this);
+    this.handleRightCarouselClick = this.handleRightCarouselClick.bind(this);
+  }
+  handleRightCarouselClick() {
+    console.log("Right");
+  }
+  handleLeftCarouselClick() {
+    console.log("Left");
   }
   handleClickDeleteRecentCity(city) {
     this.props.handleDeleteCity(city);
@@ -61,8 +69,26 @@ export default class Navigation extends Component {
           </div>
           <SearchBar onSubmit={this.onSubmit} />
         </div>
-        <div className="recent-search-container">
-          {this.recentSearchCities()}
+        <div className="recent-search-wrapper">
+          <div
+            className="carousel-btn"
+            onClick={() => {
+              this.handleLeftCarouselClick();
+            }}
+          >
+            Left
+          </div>
+          <div className="recent-search-container">
+            {this.recentSearchCities()}
+          </div>
+          <div
+            className="carousel-btn"
+            onClick={() => {
+              this.handleRightCarouselClick();
+            }}
+          >
+            Right
+          </div>
         </div>
       </div>
     );
