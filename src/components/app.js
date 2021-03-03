@@ -1,32 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faTrash,
-  faTint,
-  faArrowDown,
-  faWind,
-  faLocationArrow,
-  faSearch,
-  faChevronUp,
-} from "@fortawesome/free-solid-svg-icons";
 
 import Navigation from "./navigation/navigation";
 import Home from "./home";
-
-library.add(
-  faTrash,
-  faTint,
-  faArrowDown,
-  faWind,
-  faLocationArrow,
-  faSearch,
-  faChevronUp
-);
+import Icons from "../helpers/icons";
 
 export default class App extends Component {
   constructor() {
     super();
+
+    Icons();
 
     this.state = {
       latitude: "",
