@@ -8,6 +8,9 @@ import logo from "../../../static/assets/images/logo_AQI.jpg";
 export default class Navigation extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      xPositionBar: 0,
+    };
 
     this.onSubmit = this.onSubmit.bind(this);
     this.selectRecentSearchCity = this.selectRecentSearchCity.bind(this);
@@ -17,11 +20,21 @@ export default class Navigation extends Component {
     this.handleLeftCarouselClick = this.handleLeftCarouselClick.bind(this);
     this.handleRightCarouselClick = this.handleRightCarouselClick.bind(this);
   }
-  handleRightCarouselClick() {
-    console.log("Right");
+  handleRightCarouselClick(xPositionBar) {
+    let xPosition = xPositionBar;
+    xPosition -= 350;
+
+    this.setState({
+      xPositionBar: xPosition,
+    });
   }
-  handleLeftCarouselClick() {
-    console.log("Left");
+  handleLeftCarouselClick(xPositionBar) {
+    let xPosition = xPositionBar;
+    xPosition += 350;
+
+    this.setState({
+      xPositionBar: xPosition,
+    });
   }
   handleClickDeleteRecentCity(city) {
     this.props.handleDeleteCity(city);
@@ -73,18 +86,21 @@ export default class Navigation extends Component {
           <div
             className="carousel-btn"
             onClick={() => {
-              this.handleLeftCarouselClick();
+              this.handleLeftCarouselClick(this.state.xPositionBar);
             }}
           >
             Left
           </div>
-          <div className="recent-search-container">
+          <div
+            className="recent-search-container"
+            style={{ transform: `translateX(${this.state.xPositionBar}px)` }}
+          >
             {this.recentSearchCities()}
           </div>
           <div
             className="carousel-btn"
             onClick={() => {
-              this.handleRightCarouselClick();
+              this.handleRightCarouselClick(this.state.xPositionBar);
             }}
           >
             Right
