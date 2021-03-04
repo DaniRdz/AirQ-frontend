@@ -68,7 +68,23 @@
     background-color: $secondary-blue;
 
     .carousel-btn {
+      display: grid;
+      color: $soft-white-blue;
       z-index: 9;
+      font-size: 2rem;
+      padding: 0px 30px 0px 30px;
+      background-color: $secondary-blue;
+      border: solid 1px $primary-blue;
+      cursor: pointer;
+      svg {
+        align-self: center;
+      }
+    }
+    .shadow-right {
+      box-shadow: -5px 2px 7px 5px rgba(0, 0, 0, 0.2);
+    }
+    .shadow-left {
+      box-shadow: 5px 2px 7px 5px rgba(0, 0, 0, 0.2);
     }
 
     .recent-search-container {
@@ -76,7 +92,7 @@
       display: flex;
 
       height: 100%;
-      padding: 0px 40px 0px 40px;
+      padding: 0px 80px 0px 80px;
 
       .miniature-city-container {
         display: flex;

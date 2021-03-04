@@ -7,6 +7,8 @@ import {
   faLocationArrow,
   faSearch,
   faChevronUp,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Icons = () => {
@@ -17,7 +19,9 @@ const Icons = () => {
     faWind,
     faLocationArrow,
     faSearch,
-    faChevronUp
+    faChevronUp,
+    faChevronLeft,
+    faChevronRight
   );
 };
 

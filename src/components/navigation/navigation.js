@@ -41,6 +41,9 @@ export default class Navigation extends Component {
   }
   onSubmit(city) {
     this.props.getNewPosition(city);
+    this.setState({
+      xPositionBar: 0,
+    });
   }
   selectRecentSearchCity(city) {
     this.props.getNewCityData(city);
@@ -83,28 +86,35 @@ export default class Navigation extends Component {
           <SearchBar onSubmit={this.onSubmit} />
         </div>
         <div className="recent-search-wrapper">
-          <div
-            className="carousel-btn"
-            onClick={() => {
-              this.handleLeftCarouselClick(this.state.xPositionBar);
-            }}
-          >
-            Left
-          </div>
+          {this.state.xPositionBar !== 0 ? (
+            <div
+              className="carousel-btn shadow-left"
+              onClick={() => {
+                this.handleLeftCarouselClick(this.state.xPositionBar);
+              }}
+            >
+              <FontAwesomeIcon icon="chevron-left" />
+            </div>
+          ) : (
+            <div></div>
+          )}
+
           <div
             className="recent-search-container"
             style={{ transform: `translateX(${this.state.xPositionBar}px)` }}
           >
             {this.recentSearchCities()}
           </div>
-          <div
-            className="carousel-btn"
-            onClick={() => {
-              this.handleRightCarouselClick(this.state.xPositionBar);
-            }}
-          >
-            Right
-          </div>
+          {this.props.recentCities.length >= 4 ? (
+            <div
+              className="carousel-btn shadow-right"
+              onClick={() => {
+                this.handleRightCarouselClick(this.state.xPositionBar);
+              }}
+            >
+              <FontAwesomeIcon icon="chevron-right" />
+            </div>
+          ) : null}
         </div>
       </div>
     );
