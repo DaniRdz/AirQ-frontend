@@ -22,7 +22,7 @@ export default class Navigation extends Component {
   }
   handleRightCarouselClick(xPositionBar) {
     let xPosition = xPositionBar;
-    xPosition -= 350;
+    xPosition -= 362;
 
     this.setState({
       xPositionBar: xPosition,
@@ -30,7 +30,7 @@ export default class Navigation extends Component {
   }
   handleLeftCarouselClick(xPositionBar) {
     let xPosition = xPositionBar;
-    xPosition += 350;
+    xPosition += 362;
 
     this.setState({
       xPositionBar: xPosition,
@@ -105,7 +105,10 @@ export default class Navigation extends Component {
           >
             {this.recentSearchCities()}
           </div>
-          {this.props.recentCities.length >= 4 ? (
+          {this.props.recentCities.length * -362 >=
+          this.state.xPositionBar - (window.innerWidth - 160) ? (
+            <div></div>
+          ) : (
             <div
               className="carousel-btn shadow-right"
               onClick={() => {
@@ -114,7 +117,7 @@ export default class Navigation extends Component {
             >
               <FontAwesomeIcon icon="chevron-right" />
             </div>
-          ) : null}
+          )}
         </div>
       </div>
     );
