@@ -1,7 +1,7 @@
 .results-wrapper {
-  position: fixed;
+  position: relative;
   padding: 0px 15px 0px 15px;
-  z-index: 9;
+  z-index: 99;
 
   .results-container {
     display: grid;
@@ -9,7 +9,6 @@
 
     position: absolute;
 
-    width: 700px;
     padding: 0px 20px 0px 20px;
 
     background-color: $soft-white-blue;

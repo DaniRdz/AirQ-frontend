@@ -1,11 +1,11 @@
 body {
   margin: 0px;
   font-family: "roboto";
+  color: $black-blue;
+  background-color: $soft-white;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  color: $black-blue;
-  background-color: $soft-white;
 }
