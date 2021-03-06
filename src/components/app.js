@@ -49,7 +49,7 @@ export default class App extends Component {
   getCityData(lat, long) {
     axios
       .get(
-        `http://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=9ba4fdda-f64c-41d4-a73e-588304adae14`
+        `https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=9ba4fdda-f64c-41d4-a73e-588304adae14`
       )
       .then((response) => {
         this.setState({
