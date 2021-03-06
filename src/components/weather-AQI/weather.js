@@ -24,7 +24,10 @@ export default class Weather extends Component {
             </div>
             <div className="weather-state-grades">
               <div className="grades">{`${tp}°`}</div>
-              <img src={`https://airvisual.com/images/${ic}.png`} />
+              <img
+                src={`https://airvisual.com/images/${ic}.png`}
+                alt="weather-image"
+              />
             </div>
             <div className="weather-state-wrapper">
               <div className="weather-state-info">

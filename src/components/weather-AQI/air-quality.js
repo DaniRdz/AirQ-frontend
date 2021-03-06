@@ -8,22 +8,22 @@ export default class AirQuality extends Component {
   getAirQualityMessage(aqi) {
     if (typeof aqi === "number") {
       let status = "";
-      if (aqi < 50) {
+      if (aqi <= 50) {
         status = "Good";
         return status;
-      } else if (aqi > 50 && aqi < 100) {
+      } else if (aqi > 50 && aqi <= 100) {
         status = "Moderate";
         return status;
-      } else if (aqi > 100 && aqi < 150) {
+      } else if (aqi > 100 && aqi <= 150) {
         status = "Unhealthy For Sensitive Groups";
         return status;
-      } else if (aqi > 150 && aqi < 200) {
+      } else if (aqi > 150 && aqi <= 200) {
         status = "Unhealthy";
         return status;
-      } else if (aqi > 200 && aqi < 300) {
+      } else if (aqi > 200 && aqi <= 300) {
         status = "Very Unhealthy";
         return status;
-      } else if (aqi > 300 && aqi < 500) {
+      } else if (aqi > 300 && aqi <= 500) {
         status = "Hazardous";
         return status;
       }
@@ -36,19 +36,19 @@ export default class AirQuality extends Component {
       if (aqi < 50) {
         status = "good";
         return status;
-      } else if (aqi > 50 && aqi < 100) {
+      } else if (aqi > 50 && aqi <= 100) {
         status = "moderate";
         return status;
-      } else if (aqi > 100 && aqi < 150) {
+      } else if (aqi > 100 && aqi <= 150) {
         status = "unhealthy-for-sensitive-groups";
         return status;
-      } else if (aqi > 150 && aqi < 200) {
+      } else if (aqi > 150 && aqi <= 200) {
         status = "unhealthy";
         return status;
-      } else if (aqi > 200 && aqi < 300) {
+      } else if (aqi > 200 && aqi <= 300) {
         status = "very-unhealthy";
         return status;
-      } else if (aqi > 300 && aqi < 500) {
+      } else if (aqi > 300 && aqi <= 500) {
         status = "hazardous";
         return status;
       }
